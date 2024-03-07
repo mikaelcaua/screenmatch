@@ -1,6 +1,9 @@
 package com.br.screenmatch;
 
+import com.br.screenmatch.main.Main;
+import com.br.screenmatch.model.DadosEpisodio;
 import com.br.screenmatch.model.DadosSerie;
+import com.br.screenmatch.model.DadosTemporada;
 import com.br.screenmatch.service.ConsumoApi;
 import com.br.screenmatch.service.ConverterDados;
 import org.springframework.boot.CommandLineRunner;
@@ -18,17 +21,7 @@ public class ScreenmatchApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
-		//https://www.omdbapi.com/?t=gilmore+girls&season=1&episode=2&apikey=6585022c URL GERAL
-		//https://www.omdbapi.com/?t=gilmore+girls&season=1&apikey=6585022c URL TEMPORADA ESPECIFICA
-
-		ConsumoApi consumoApi = new ConsumoApi();
-		var json = consumoApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&apikey=6585022c");
-		System.out.println(json);
-		var conversor = new ConverterDados();
-		var dadosSerie = conversor.obterDadosConvertidos(json, DadosSerie.class);
-		System.out.println(dadosSerie);
-
-
+		Main main = new Main();
+		main.exibeMenu();
 	}
 }
