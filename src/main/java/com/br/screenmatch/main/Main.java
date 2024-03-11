@@ -8,6 +8,7 @@ import com.br.screenmatch.service.ConverterDados;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 public class Main {
@@ -37,10 +38,47 @@ public class Main {
                                                     map(d -> new Episodio(t.numero(), d))).
                                                             collect(Collectors.toList());
 
-        System.out.println("Você quer ver os episódios a partir de qual ano?");
-        Integer ano = scanner.nextInt();
-        episodios.stream().
-                filter(e->e.getData().getYear()>=ano && e.getData()!=null)
-                .forEach(System.out::println);
+
+
+//        System.out.println("Você quer ver os episódios a partir de qual ano?");
+//        Integer ano = scanner.nextInt();
+//        episodios.stream().
+//                filter(e->e.getData().getYear()>=ano && e.getData()!=null)
+//                .forEach(System.out::println);
+
+
+
+//        System.out.println("Dgite um episodio:");
+//        var entrada = scanner.nextLine();
+//        Optional <Episodio> episodioBuscado = episodios.stream()
+//                .filter(e -> e.getTitulo().toUpperCase().contains(entrada.toUpperCase()))
+//                .findFirst();
+//
+//        if(episodioBuscado.isPresent()){
+//            System.out.println("Temporada do episódio  -- "+episodioBuscado.get().getTemporada());
+//        }
+//        else{
+//            System.out.println("Episódio não encontrado");
+//        }
+
+
+
+//        Map <Integer, Double> avaliacoes = episodios.stream().
+//                                            filter(e->e.getAvaliacao()>0).
+//                                                collect(Collectors.groupingBy(Episodio::getTemporada,
+//                                                        Collectors.averagingDouble(Episodio::getAvaliacao)));
+//
+//        System.out.println(avaliacoes);
+
+
+
+//        DoubleSummaryStatistics estatisticas = episodios.stream().
+//                                                filter(e->e.getAvaliacao()>0).
+//                                                collect(Collectors.summarizingDouble(Episodio::getAvaliacao));
+//        System.out.println(estatisticas);
+
+
+
+
     }
 }
